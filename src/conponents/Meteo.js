@@ -29,8 +29,8 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q=Toulouse&lang=fr&appid=e
         const { isLoaded, main, weather } = this.state;
             return(
                 <div>
-                    <p>La température est de {main.temp} </p>
-                    <p>coucou {weather.description}</p>
+                    <p>La température est de {main.temp}°C </p><br></br>
+                    <p>{weather.description}</p>
                 </div>
             );
     }
