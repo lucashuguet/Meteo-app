@@ -6,7 +6,8 @@ constructor (props) {
     this.state = {
         isLoaded: false,
         main: [],
-        weather: []
+        weather: [],
+        name: []
         }
     this.componentDidMount()
 }
@@ -19,7 +20,8 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q=Toulouse&lang=fr&appid=e
      this.setState({
         isLoaded: true,
         main: result.main,
-        weather: result.weather[0]
+        weather: result.weather[0],
+        name: result.name
         
      });
    })
@@ -27,15 +29,20 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q=Toulouse&lang=fr&appid=e
 }
  
     render(){
-        const { isLoaded, main, weather } = this.state;
-            return(
+        const { main, weather, name, isLoaded } = this.state;
+        if (!isLoaded) {
+            return <div><p className='load'>Chargement...</p></div>
+        }else{
+             return(
                 <div>
                     <br></br>
+                    <p>Ville : {name}</p><br></br>
                     <p>La température est de {main.temp}°C </p><br></br>
                     <p>Conditions : {weather.description}</p><br></br>
                     <p>Humidité : {main.humidity}%</p><br></br>
                 </div>
             );
+        }
     }
 };
 
