@@ -5,9 +5,9 @@ class Titles extends React.Component {
         return(
             <div>
                 <h1>Météo</h1>
-                <h3>par Lucas</h3><br></br>
+                <h5>par Lucas</h5><br></br><br></br>
                 
-                <p class='Desc'>Température, conditions et plus...</p>
+                
                 
             </div>
         );
