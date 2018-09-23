@@ -8,9 +8,9 @@ class App extends React.Component {
   render(){
     return(
       <div>
-          <Titles />
+          
           <Meteo />
-          <Form />
+          
       </div>
     );
   }
