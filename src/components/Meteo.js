@@ -7,7 +7,8 @@ constructor (props) {
         isLoaded: false,
         main: [],
         weather: [],
-        name: []
+        name: [],
+        wind: []
         }
     this.componentDidMount()
 }
@@ -21,7 +22,8 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q=Toulouse&lang=fr&appid=e
         isLoaded: true,
         main: result.main,
         weather: result.weather[0],
-        name: result.name
+        name: result.name,
+        wind: result.wind
         
      });
    })
@@ -29,7 +31,7 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q=Toulouse&lang=fr&appid=e
 }
  
     render(){
-        const { main, weather, name, isLoaded } = this.state;
+        const { main, weather, name, isLoaded, wind } = this.state;
         if (!isLoaded) {
             return <div><p className='load'>Chargement...</p></div>
         }else{
@@ -40,6 +42,7 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q=Toulouse&lang=fr&appid=e
                     <p>La température est de {main.temp}°C </p><br></br>
                     <p>Conditions : {weather.description}</p><br></br>
                     <p>Humidité : {main.humidity}%</p><br></br>
+                    <p>Vent : {wind.speed} km/h</p>
                 </div>
             );
         }

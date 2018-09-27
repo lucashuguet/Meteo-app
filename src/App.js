@@ -1,7 +1,7 @@
 import React from "react";
 
-import Titles from "./conponents/Titles";
-import Meteo from "./conponents/Meteo";
+import Titles from "./components/Titles";
+import Meteo from "./components/Meteo";
 
 
 class App extends React.Component {
