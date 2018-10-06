@@ -11,7 +11,6 @@ class App extends React.Component {
       <div>
           <Titles />
           <Meteo />
-          
       </div>
     );
   }
